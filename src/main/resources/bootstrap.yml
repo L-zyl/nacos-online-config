@@ -1,21 +1,17 @@
 spring:
   application:
     name: ${SERVER_NAME}
-  profiles:
-    active: test
   cloud:
     nacos:
       # 配置中心
       config:
         # 默认不开启，本地调试时走本地配置
-#        enabled: true
         enabled: ${ONLINE_CONFIG_ENABLE:false}
         # 本地测试线上配置时，可采用 access-key + secret-key进行本地连接
-#        access-key: ${ONLINE_CONFIG_ACCESS_KEY}
-#        secret-key: ${ONLINE_CONFIG_SECRET_KEY}
+        access-key: ${ONLINE_CONFIG_ACCESS_KEY}
+        secret-key: ${ONLINE_CONFIG_SECRET_KEY}
         server-addr: ${NACOS_CONFIG_SERVER}
         namespace: ${ONLINE_CONFIG_NAMESPACE}
-        # dataId 完整格式为 ${spring.application.name)-${spring. profile.active}.＄{spring.cloud.nacos.config. file.extension}
 #        prefix: ${SERVER_NAME}
         extension-configs:
           - data-id: ${ONLINE_NORMAL_CONFIG_DATA_ID}
