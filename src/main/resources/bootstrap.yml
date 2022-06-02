@@ -12,6 +12,8 @@ spring:
         secret-key: ${ONLINE_CONFIG_SECRET_KEY}
         server-addr: ${NACOS_CONFIG_SERVER}
         namespace: ${ONLINE_CONFIG_NAMESPACE}
+        name: ${ONLINE_NORMAL_CONFIG_DATA_ID}
+#        group: ${ONLINE_CONFIG_GROUP_NAME}
 #        prefix: ${SERVER_NAME}
         extension-configs:
           - data-id: ${ONLINE_NORMAL_CONFIG_DATA_ID}
